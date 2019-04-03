@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  
+    <div class="jumbotron jumbotron-fluid ">
+         <div class="container jumbo ">
+             {% for k,v in crypto.DISPLAY.items %}
+                 <h5 class="lead">{{ k }}</h1>
+                 <strong>Name</strong> : {{ k }} <br>
+                 <strong>Price</strong> {{ v.USD.PRICE }} <br>
+                 <strong>High day</strong> {{ v.USD.HIGHDAY }} <br>
+                 <strong>Low day</strong> {{ v.USD.LOWDAY }} <br>
+                 <strong>Market Cap</strong> {{ v.USD.MKTCAP }} <br>
+            {% endfor %}
+             </div>
+        </div>
+    </div>
+
+
+              
+ 
+{% endblock %}
