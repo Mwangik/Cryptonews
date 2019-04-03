@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block content%}
+
+ <div class="row">
+        {% for data in api.Data %}
+        <div class="col-sm py-3">
+         <div class="card" style="width: 18rem;">
+            <img src="{{ data.imageurl }}" class="card-img-top" alt="{{ data.source }}">
+            <div class="card-body">
+            <h5 class="card-title">{{ data.title }}</h5>
+            <p class="card-text">{{ data.body }}</p>
+                <a href="{{ data.url }}" class="btn btn-primary">Read More...</a>
+            </div>
+         </div>
+       </div>
+       <br>
+        {% endfor %}
+ </div>
+   
     {{ api.Data }}
 {% endblock %}
